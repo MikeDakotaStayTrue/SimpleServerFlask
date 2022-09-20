@@ -1,0 +1,19 @@
+button#showAddDialog {
+    margin: 0 auto;
+    display: block;
+}
+
+button#hideAddDialog {
+    margin: 0 auto;
+    display: block;
+}
+
+button#addRecord {
+    margin: 0 auto;
+    display: block;
+}
+
+div#footer {
+    margin: 0 auto;
+    display: block;
+}

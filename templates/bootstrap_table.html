@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Cardholder</th>
+        <th>Card number</th>
+        <th>Quantity of trips</th>
+        <th></th>
+      </tr>
+
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+          <form action="http://localhost:5000/update" method="POST">
+            <td> <input name="cardholder" id="cardholder" value={{user.cardholder}} /></td>
+            <td> <input name="cardnum" id="cardnum" value={{user.cardnum}} /></td>
+            <td> <input name="trips" id="trips" value={{user.trips}} /></td>
+            <td> <input type="hidden" name="doc_id" id="doc_id" value={{user.doc_id}} /></td>
+            <td><Button>Update</Button></td>
+          </form>
+          <form action="http://localhost:5000/delete" method="POST">
+            <td> <input type="hidden" name="doc_id" id="doc_id" value={{user.doc_id}} /></td>
+            <td><Button>Delete</Button></td>
+          </form>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
